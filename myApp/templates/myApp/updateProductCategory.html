@@ -1,0 +1,53 @@
+{% extends "myApp/base.html" %}
+{% block title %}Home{% endblock title %}
+{% block productActive %}
+             active     
+{% endblock productActive %}
+{% block body %}
+
+
+<div class="container mt-5 shadow p-4">
+     {% if messages %}
+     {% for message in messages %}
+     <div class="alert alert-success">
+       {{message}}
+     </div>
+     {% endfor %}
+   
+   {% endif %}
+
+     <h2 class="text-warning p-2">Update Product Category</h2>
+     <form method="POST" class="needs-validation" novalidate>
+         {% csrf_token %}
+         <div class="form-group">
+             <label for="name">Name</label>
+             <input type="text" class="form-control" id="name" name="name" value="{{ product_category.name }}" required>
+             <div class="invalid-feedback">
+                 Please provide a name.
+             </div>
+         </div>
+         <div class="form-group">
+             <label for="description">Description</label>
+             <textarea class="form-control" id="description" name="description" rows="3" required>{{ product_category.description }}</textarea>
+             <div class="invalid-feedback">
+                 Please provide a description.
+             </div>
+         </div>
+         <div class="form-group">
+          <label for="status">Choose... Status</label>
+          <select class="form-control" id="status" name="status" required>
+              <option value="Active" {% if product_category.status == 'Active' %}selected{% endif %}>Active</option>
+              <option value="Inactive" {% if product_category.status == 'Inactive' %}selected{% endif %}>Inactive</option>
+          </select>
+          <div class="invalid-feedback">
+              Please select a status.
+          </div>
+      </div>
+      <div class="buttons mt-4">
+           <button type="submit" class="btn btn-primary">Update</button>
+           <a href="{% url 'product_categories' %}" class="btn btn-outline-primary">Go Back</a>
+      </div>
+     </form>
+ </div>
+
+{% endblock body %}

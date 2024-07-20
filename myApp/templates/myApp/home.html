@@ -1,0 +1,54 @@
+{% extends "myApp/base.html" %}
+{% block title %}Home{% endblock title %}
+{% block homeActive %}
+       active       
+{% endblock homeActive %}
+{% block body %}
+<h2>Welcome to the home page</h2>
+
+<div class="container ">
+     <div class="row justify-content-center">
+          <div class="col-md-3 p-3 mb-2 bg-white shadow border-start border-info border-3 m-1">
+               <div class="d-flex justify-content-between">
+               <div class="left">
+                    <h4 class="">Total Categories</h4>
+                    <hr>
+                    <p class="">3</p>
+               </div>
+               <div class="right border border-secondary box w-25 bg-light p-3 mt-2 h-100 d-inline-block">
+                    <i class="fas fa-list"></i>
+               </div>
+          </div>
+          </div>
+
+          <div class="col-md-3 p-3 mb-2 bg-white shadow  border-start border-warning border-3 m-1">
+               <div class="d-flex justify-content-between">
+                    <div class="left">
+                         <h4>Total Products</h4>
+                         <hr>
+                         <p>3</p>
+                    </div>
+                    <div class="right border border-secondary box w-25 bg-light p-3 mt-2 h-100 d-inline-block">
+                         <i class="fas fa-box"></i>
+                    </div>
+               </div>
+          </div>
+
+          <div class="col-md-3 h-25 p-3 mb-2 bg-white shadow   border-start border-success border-3 m-1">
+               <div class="d-flex justify-content-between">
+                    <div class="left">
+                         <h4>Total Transactions</h4>
+                         <hr>
+                         <p>2</p>
+                    </div>
+                    <div class="right border border-secondary box w-25 bg-light p-3 mt-2 h-100 d-inline-block">
+                         <i class="fas fa-receipt"></i>
+                    </div>
+               </div>
+          </div>
+
+     </div>
+</div>
+
+
+{% endblock body %}
